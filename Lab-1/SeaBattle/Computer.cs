@@ -146,7 +146,7 @@ namespace SeaBattle {
             int coordinateX, coordinateY;
             Random rnd = new Random();
             bool canFire = false, needhit = false;
-            int luckiness = rnd.Next(0, 3);
+            int luckiness = rnd.Next(0, 5);
             if (complexcity == 1 && luckiness < 2) {
                 needhit = true;
             }
@@ -172,7 +172,7 @@ namespace SeaBattle {
             bool hit = true;
             Random rnd = new Random();
             if (complexcity <= 2) {
-                if (rnd.Next(0, 1) == 1) {
+                if (rnd.Next(0, 2) == 1) {
                     hit = false;
                 }
             }
