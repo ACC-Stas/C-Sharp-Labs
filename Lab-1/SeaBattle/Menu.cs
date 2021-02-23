@@ -27,6 +27,8 @@ namespace SeaBattle {
         }
         public bool StartMenu() { //true - need to play
             bool play = false, showAgain;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.Clear();
             do {
                 showAgain = false;
                 Console.CursorVisible = false;

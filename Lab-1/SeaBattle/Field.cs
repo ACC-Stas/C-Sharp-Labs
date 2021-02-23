@@ -271,6 +271,10 @@ namespace SeaBattle {
                 playerScore++;
                 if (playerScore >= 10) {
                     DrawMenu(true);
+                    damaged = false;
+                }
+                if(compScore >= 10) {
+                    damaged = false;
                 }
             }
             return damaged;
@@ -385,7 +389,11 @@ namespace SeaBattle {
                 coordinateY = tempY;
                 compScore++;
                 if (compScore >= 10) {
+                    damaged = false;
                     DrawMenu();
+                }
+                if(playerScore >= 10) {
+                    damaged = false;
                 }
             }
             Console.SetCursorPosition(coordinateX, coordinateY);

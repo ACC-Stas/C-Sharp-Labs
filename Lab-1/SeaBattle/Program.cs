@@ -6,7 +6,7 @@ namespace SeaBattle {
             Menu mainMenu = new Menu();
             bool wantToPlay;
             wantToPlay = mainMenu.StartMenu();
-            if (wantToPlay) {
+            while (wantToPlay) {
                 int complexcity = mainMenu.GetComplexcity();
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.BackgroundColor = ConsoleColor.Blue;
@@ -29,6 +29,7 @@ namespace SeaBattle {
                         computerHit = Field.AttackForComputer(computerHit, complexcity);
                     } while (computerHit);
                 }
+                wantToPlay = mainMenu.StartMenu();
             }
         }
     }
