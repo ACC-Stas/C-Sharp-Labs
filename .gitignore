@@ -1,0 +1,9 @@
+## for Visual studio c#
+
+*.sln
+*/*/bin
+*/*/obj
+*/.vs
+*/*/Properties
+*.config
+*.csproj
