@@ -15,7 +15,10 @@ namespace Transport {
             Console.WriteLine(cars[0].Number);
             Console.WriteLine(car1.Number);
             Console.WriteLine(cars[1].Number);
-            Console.WriteLine(car.Stop());
+            Console.WriteLine(cars[1].Name);
+            car1.Name = "Super car";
+            Console.WriteLine(cars[1].Name);
+            Console.WriteLine(car1.Stop());
             Console.ReadKey();
         }
     }

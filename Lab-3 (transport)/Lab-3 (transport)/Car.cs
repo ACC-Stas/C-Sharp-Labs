@@ -11,16 +11,17 @@ namespace Transport {
             Number = numberOfCars;
             numberOfCars++;
         }
+        public string Name { get; set; } = "Unnamed";
         public int Number { get; private set; }
         public override string Move() {
             SoundPlayer movement = new SoundPlayer(@"..\..\CarSounds\Move.wav");
             movement.Play();
-            return "Car is riding";
+            return $"\"{Name}\" Car {Number} is riding";
         }
         public override string Stop() {
             SoundPlayer stopping = new SoundPlayer(@"..\..\CarSounds\Stop.wav");
             stopping.Play();
-            return "Car is stopped";
+            return $"\"{Name}\" Car {Number} is stopped";
         }
     }
 }
