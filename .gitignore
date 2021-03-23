@@ -3,6 +3,7 @@
 *.sln
 */*/bin
 */*/obj
+*/packages
 */.vs
 */*/Properties
 *.config
