@@ -8,3 +8,10 @@
 */*/Properties
 *.config
 *.csproj
+
+## for Visual studio c++
+*/debug
+*/*/debug
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
