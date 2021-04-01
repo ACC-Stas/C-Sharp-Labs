@@ -41,15 +41,15 @@ int _stdcall Gcd(int a, int b) {
     return a + b;
 }
 
-int _stdcall Min(int a, int b) {
+int __cdecl Min(int a, int b) {
     return a < b ? a : b;
 }
 
-int _stdcall Max(int a, int b) {
+int __cdecl Max(int a, int b) {
     return a > b ? a : b;
 }
 
-int _stdcall Pow(int a, int power) {
+int __cdecl Pow(int a, int power) {
     int value = 1;
     while (power--) {
         value *= a;

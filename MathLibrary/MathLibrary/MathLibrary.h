@@ -14,9 +14,9 @@ extern "C" {
     MATHLIBRARY_API int _stdcall Mod(int a, int b);
     MATHLIBRARY_API int _stdcall Abs(int a);
     MATHLIBRARY_API int _stdcall Gcd(int a, int b);
-    MATHLIBRARY_API int _stdcall Min(int a, int b);
-    MATHLIBRARY_API int _stdcall Max(int a, int b);
-    MATHLIBRARY_API int _stdcall Pow(int a, int power);
+    MATHLIBRARY_API int __cdecl Min(int a, int b);
+    MATHLIBRARY_API int __cdecl Max(int a, int b);
+    MATHLIBRARY_API int __cdecl Pow(int a, int power);
 }
 
 
