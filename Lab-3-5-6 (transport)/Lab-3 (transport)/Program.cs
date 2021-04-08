@@ -12,7 +12,7 @@ namespace Transport {
             car1.Name = "Super car";
             Console.WriteLine(car1.Stop());
             Console.ReadKey();
-            Car zhiga = new Zhigul(1, 15);
+            Zhigul zhiga = new Zhigul(1, 15);
             Console.WriteLine(zhiga.Move());
             Console.ReadKey();
             Car car2 = new AppleCar(0, 100500);
@@ -20,6 +20,12 @@ namespace Transport {
             Console.ReadKey();
             Car car4 = new CyberTruck(1000, 500);
             Console.WriteLine(car4.Stop());
+            Console.WriteLine(car4.CompareTo(car2));
+            zhiga.Destroy();
+            Console.WriteLine(zhiga.Condition);
+            AppleCar appleCar = new AppleCar(0, 1010101);
+            appleCar.MakeOlder(800);
+            Console.WriteLine(appleCar.Relevant);
             Console.ReadKey();
         }
     }
