@@ -2,8 +2,8 @@
 using System.Media;
 
 namespace Transport {
-    sealed class Icar : Car {
-        public Icar(int loadLimit = 0, int cost = 0) : base(loadLimit, cost) {
+    sealed class AppleCar : Car {
+        public AppleCar(int loadLimit = 0, int cost = 0) : base(loadLimit, cost) {
             Name = "ICAR";
         }
         public override string Move() {
