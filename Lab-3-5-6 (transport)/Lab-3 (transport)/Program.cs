@@ -26,6 +26,9 @@ namespace Transport {
             AppleCar appleCar = new AppleCar(0, 1010101);
             appleCar.MakeOlder(800);
             Console.WriteLine(appleCar.Relevant);
+            IBreakable breakableCar = new Zhigul(10, 25);
+            Console.WriteLine(breakableCar.Condition);
+            breakableCar.Destroy();
             Console.ReadKey();
         }
     }
