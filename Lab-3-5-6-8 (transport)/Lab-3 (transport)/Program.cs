@@ -30,6 +30,15 @@ namespace Transport {
             Console.WriteLine(breakableCar.Condition);
             breakableCar.Destroy();
             Console.ReadKey();
+            Console.WriteLine("Testing Exceptions in Cars");
+            Car car3 = new Zhigul(15, 12);
+            Cars superCars = new Cars();
+            superCars[car3.Number] = car3;
+            try {
+                Console.WriteLine(superCars[25].Name);
+            } catch (System.Collections.Generic.KeyNotFoundException ex) {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
