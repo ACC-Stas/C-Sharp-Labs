@@ -5,21 +5,13 @@ namespace Transport {
         static void Main(string[] args) {
             Car car = new Car(145, 4);
             Car car1 = new Car(1234, 6);
-            Console.ReadKey();
             Console.WriteLine(car.Cost);
             Console.WriteLine(car.Number);
             Console.WriteLine(car1.Number);
             car1.Name = "Super car";
-            Console.WriteLine(car1.Stop());
-            Console.ReadKey();
             Zhigul zhiga = new Zhigul(1, 15);
-            Console.WriteLine(zhiga.Move());
-            Console.ReadKey();
             Car car2 = new AppleCar(0, 100500);
-            Console.WriteLine(car2.Move());
-            Console.ReadKey();
             Car car4 = new CyberTruck(1000, 500);
-            Console.WriteLine(car4.Stop());
             Console.WriteLine(car4.CompareTo(car2));
             zhiga.Destroy();
             Console.WriteLine(zhiga.Condition);
@@ -29,7 +21,6 @@ namespace Transport {
             IBreakable breakableCar = new Zhigul(10, 25);
             Console.WriteLine(breakableCar.Condition);
             breakableCar.Destroy();
-            Console.ReadKey();
             Console.WriteLine("Testing Exceptions in Cars");
             Car car3 = new Zhigul(15, 12);
             Cars superCars = new Cars();
@@ -39,6 +30,12 @@ namespace Transport {
             } catch (System.Collections.Generic.KeyNotFoundException ex) {
                 Console.WriteLine(ex.Message);
             }
+            Console.WriteLine("Testing Events in Car");
+            CyberTruck car5 = new CyberTruck(42, 500);
+            car5.MoveNotification += (output) => Console.WriteLine("Move event was called:" + output);
+            car5.StopNotification += (output) => Console.WriteLine("Stop event was called:" + output);
+            car5.Move();
+            car5.Stop();
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Transport {
             LoadLimit = loadLimit;
             Cost = cost;
         }
-        abstract public string Move();
-        abstract public string Stop();
+        abstract public void Move();
+        abstract public void Stop();
     }
 }

@@ -3,6 +3,9 @@ using System.Media;
 
 namespace Transport {
     sealed class Zhigul : Car, IBreakable {
+        public delegate void CarOutPut(string output);
+        public event CarOutPut MoveNotification;
+        public event CarOutPut StopNotification;
         public Zhigul(int loadLimit = 0, int cost = 0) : base(loadLimit, cost) {
             Name = "ZHIGUL";
             Condition = "Can be used";
@@ -16,15 +19,15 @@ namespace Transport {
             Condition = "Can be used";
             return $"\"{Name}\" Car {Number} is repaired";
         }
-        public override string Move() {
+        public override void Move() {
             SoundPlayer movement = new SoundPlayer(@"..\..\CarSounds\MoveZhigul.wav");
             movement.Play();
-            return $"\"{Name}\" Car {Number} is riding";
+            MoveNotification($"\"{Name}\" Car {Number} is riding");
         }
-        public override string Stop() {
+        public override void Stop() {
             SoundPlayer stopping = new SoundPlayer(@"..\..\CarSounds\StopZhigul.wav");
             stopping.Play();
-            return $"\"{Name}\" Car {Number} is stopped";
+            StopNotification($"\"{Name}\" Car {Number} is riding");
         }
     }
 }

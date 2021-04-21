@@ -3,6 +3,9 @@ using System.Media;
 
 namespace Transport {
     sealed class AppleCar : Car, IObsoleteable {
+        public delegate void CarOutPut(string output);
+        public event CarOutPut MoveNotification;
+        public event CarOutPut StopNotification;
         public AppleCar(int loadLimit = 0, int cost = 0) : base(loadLimit, cost) {
             Name = "ICAR";
             Relevant = true;
@@ -17,15 +20,15 @@ namespace Transport {
                 }
             }
         }
-        public override string Move() {
+        public override void Move() {
             SoundPlayer movement = new SoundPlayer(@"..\..\CarSounds\MoveIcar.wav");
             movement.Play();
-            return $"\"{Name}\" Car {Number} is riding";
+            MoveNotification($"\"{Name}\" Car {Number} is riding");
         }
-        public override string Stop() {
+        public override void Stop() {
             SoundPlayer stopping = new SoundPlayer(@"..\..\CarSounds\StopIcar.wav");
             stopping.Play();
-            return $"\"{Name}\" Car {Number} is stopped";
+            StopNotification($"\"{Name}\" Car {Number} is riding");
         }
     }
 }

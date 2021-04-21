@@ -2,18 +2,21 @@
 
 namespace Transport {
     sealed class CyberTruck : Car {
+        public delegate void CarOutPut(string output);
+        public event CarOutPut MoveNotification;
+        public event CarOutPut StopNotification;
         public CyberTruck(int loadLimit = 0, int cost = 0) : base(loadLimit, cost) {
             Name = "CYBERTRUCK";
         }
-        public override string Move() {
+        public override void Move() {
             SoundPlayer movement = new SoundPlayer(@"..\..\CarSounds\MoveCyberTruck.wav");
             movement.Play();
-            return $"\"{Name}\" Car {Number} is riding";
+            MoveNotification($"\"{Name}\" Car {Number} is riding");
         }
-        public override string Stop() {
+        public override void Stop() {
             SoundPlayer stopping = new SoundPlayer(@"..\..\CarSounds\StopCyberTruck.wav");
             stopping.Play();
-            return $"\"{Name}\" Car {Number} is stopped";
+            StopNotification($"\"{Name}\" Car {Number} is riding");
         }
     }
 }
