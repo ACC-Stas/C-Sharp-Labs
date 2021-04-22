@@ -22,12 +22,12 @@ namespace Transport {
         public override void Move() {
             SoundPlayer movement = new SoundPlayer(@"..\..\CarSounds\MoveZhigul.wav");
             movement.Play();
-            MoveNotification($"\"{Name}\" Car {Number} is riding");
+            MoveNotification?.Invoke($"\"{Name}\" Car {Number} is riding");
         }
         public override void Stop() {
             SoundPlayer stopping = new SoundPlayer(@"..\..\CarSounds\StopZhigul.wav");
             stopping.Play();
-            StopNotification($"\"{Name}\" Car {Number} is riding");
+            StopNotification?.Invoke($"\"{Name}\" Car {Number} is riding");
         }
     }
 }
